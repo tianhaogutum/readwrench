@@ -48,7 +48,7 @@ is not affiliated with or endorsed by any project named here.
 ## `readwrench quote` (formerly quote-locator)
 
 Ported from the standalone `quote-locator` tool, MIT License, Copyright (c) 2026
-Quote Locator contributors (full notice: `licenses/quote-locator-MIT.txt`). It is a
+tianhaogutum (full notice: `licenses/quote-locator-MIT.txt`). It is a
 small adapter around existing libraries, installed with `readwrench[quote]` and not
 vendored:
 
@@ -77,7 +77,7 @@ trailing comma removed (`readium-locator-schema.patch`), under Readium's BSD-3-C
 
 ## `readwrench clues` (formerly cluejoin)
 
-- Original tool: cluejoin 0.1.0, MIT License, Copyright (c) 2026 Cluejoin contributors.
+- Original tool: cluejoin 0.1.0, MIT License, Copyright (c) 2026 tianhaogutum.
   Full text: `licenses/cluejoin-MIT.txt`.
 - Uses only the Python standard library; retrieval is SQLite FTS5 with the trigram tokenizer
   (SQLite is public domain) via Python's `sqlite3`.
@@ -220,7 +220,7 @@ Bundled files:
 
 ## `readwrench footnotes` (formerly epub-footback)
 
-Original code: MIT, "Copyright (c) 2026 epub-footback contributors" — see
+Original code: MIT, "Copyright (c) 2026 tianhaogutum" — see
 [`licenses/epub-footback-MIT.txt`](licenses/epub-footback-MIT.txt).
 
 Runtime dependency (not bundled): [lxml](https://lxml.de/) (BSD-3-Clause), installed by the
@@ -247,8 +247,7 @@ Test and example data:
 
 ## `readwrench subset-proof` (formerly the standalone subset-proof)
 
-Formerly the standalone `subset-proof` tool, MIT License, Copyright (c) 2026 Subset Proof
-contributors ([text](licenses/subset-proof-MIT.txt)). Its code is included here under that
+Formerly the standalone `subset-proof` tool, MIT License, Copyright (c) 2026 tianhaogutum ([text](licenses/subset-proof-MIT.txt)). Its code is included here under that
 notice.
 
 It is a thin integration layer and contains no third-party code. It wraps, as separately
@@ -288,7 +287,7 @@ The example copy in `examples/subset-proof/` is short original text written for 
 
 ## `readwrench lineage` (formerly page-lineage)
 
-Original tool: page-lineage, MIT License, Copyright (c) 2026 Page Lineage contributors
+Original tool: page-lineage, MIT License, Copyright (c) 2026 tianhaogutum
 (`licenses/page-lineage-MIT.txt`). It was a Node.js composition of npm packages; this
 Python port reimplements the parts it used with the standard library. No npm code is
 bundled; two components are ported closely enough to be derivative works:
