@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-label="readwrench">
+<title>readwrench</title>
+<rect width="64" height="64" rx="15" fill="#14b8a6"/>
+<g fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.6">
+<path d="M47 41 C44 38.5 40.5 38 37.5 38.5 V50.5 C40.5 50 44 50.5 47 53 C50 50.5 53.5 50 56.5 50.5 V38.5 C53.5 38 50 38.5 47 41 Z"/>
+<path d="M47 41 V53"/>
+</g>
+<g transform="rotate(45 32 32)" fill="#ffffff">
+<mask id="m"><rect x="-20" y="-20" width="104" height="104" fill="#fff"/><rect x="27.5" y="2" width="9" height="15" rx="1" fill="#000"/><circle cx="32" cy="50" r="2.6" fill="#000"/></mask>
+<g mask="url(#m)"><circle cx="32" cy="17" r="11.5"/><rect x="27.5" y="20" width="9" height="36" rx="4.5"/></g>
+</g>
+<text x="80" y="45" fill="#f0f3f6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.5">read<tspan fill="#5eead4">wrench</tspan></text>
+</svg>

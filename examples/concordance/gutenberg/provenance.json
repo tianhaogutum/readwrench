@@ -1,0 +1,44 @@
+[
+  {
+    "file": "prince.epub",
+    "url": "https://www.gutenberg.org/ebooks/1232.epub3.images",
+    "size": 368446,
+    "sha256": "0260d6165a1558ee2e94eb37d7f1ff0cf4e30b41e094d6ff1afb094950b1be88",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "file": "government.epub",
+    "url": "https://www.gutenberg.org/ebooks/7370.epub3.images",
+    "size": 395049,
+    "sha256": "b9d295bd551d8613ce61aea988289d9a64a22a7e318ae6c209557e1844857ca7",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "file": "republic.epub",
+    "url": "https://www.gutenberg.org/ebooks/1497.epub3.images",
+    "size": 619155,
+    "sha256": "8c8bf2ed9bff65aaf226bf5db3879eb378a26e72489bd28666abc01c02f2a0c2",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "file": "prince-epub2.epub",
+    "url": "https://www.gutenberg.org/ebooks/1232.epub.noimages",
+    "size": 217516,
+    "sha256": "78c084b6aef37ae9213ab4861adba7353e4cda3abd41bfd324ee27bb3f7d43e3",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "file": "daodejing.epub",
+    "url": "https://www.gutenberg.org/ebooks/7337.epub3.images",
+    "size": 79402,
+    "sha256": "382144164e288b78c4e14d239b5a856e5d92a92fc99f80e47ec2f7e919075002",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "file": "analects-zh.epub",
+    "url": "https://www.gutenberg.org/ebooks/23839.epub3.images",
+    "size": 87768,
+    "sha256": "06f880e0e1b1479edc1387e82ae2ad312565853a58598a4b328a4bf8376f59d6",
+    "retrieved": "2026-11-11"
+  }
+]

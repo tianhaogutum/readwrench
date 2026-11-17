@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "sourceURL": "https://example.org/guides/backups",
+  "title": "A practical backup routine",
+  "ordering": "capture-time",
+  "warnings": [],
+  "captures": [
+    {
+      "id": "c1",
+      "file": "captures/1.html",
+      "label": "January reading",
+      "format": "html",
+      "inputIndex": 0,
+      "sha256": "f43c1055e0edc1aded855594887924b2d0eff50486264c5efdd528598a98929c",
+      "bytes": 1590,
+      "title": "A practical backup routine",
+      "captureTime": {
+        "at": "2026-01-10T18:30:00.000Z",
+        "source": "fictional example capture log",
+        "raw": "2026-01-10T18:30:00Z"
+      },
+      "observedTimes": [],
+      "observedURLs": [],
+      "claimedModified": [],
+      "extraction": {
+        "method": "Mozilla Readability",
+        "version": "0.6.0",
+        "encoding": "UTF-8",
+        "encodingSource": "HTML encoding sniffing"
+      },
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Begin with an inventory of the files you cannot recreate. Include family photographs, research notes, account recovery instructions, and the documents that explain how your work is organized. Keep a copy of this inventory outside your primary computer.",
+          "lineageId": "p00001"
+        },
+        {
+          "kind": "p",
+          "text": "Store a second copy on a different physical device. A spare disk beside the laptop protects against a failed drive, but a fire or theft can still remove both copies. Choose a second location that remains accessible during a disruption.",
+          "lineageId": "p00002"
+        },
+        {
+          "kind": "p",
+          "text": "Test one restore every six months. Write down the tools and passwords you needed, and check that the restored files actually open. Recovery instructions are useful only if someone can follow them without the original computer.",
+          "lineageId": "p00003"
+        },
+        {
+          "kind": "p",
+          "text": "Encrypt sensitive archives before copying them to remote storage. Keep the recovery key in a separate place and tell a trusted person how to locate it if you become unavailable. Losing the key makes a healthy backup unreadable.",
+          "lineageId": "p00004"
+        },
+        {
+          "kind": "p",
+          "text": "Keep each backup for thirty days before rotating it out. Name the archives consistently so that you can identify a capture without relying on the filesystem modification date. A copied file can receive a new date while containing old information.",
+          "lineageId": "p00005"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "c2",
+      "file": "captures/2.html",
+      "label": "February revision",
+      "format": "html",
+      "inputIndex": 1,
+      "sha256": "cfb67284f7b949b77022aa41734bf53b6ae23355944df5676a0a83a252f290da",
+      "bytes": 1585,
+      "title": "A practical backup routine",
+      "captureTime": {
+        "at": "2026-02-10T18:30:00.000Z",
+        "source": "fictional example capture log",
+        "raw": "2026-02-10T18:30:00Z"
+      },
+      "observedTimes": [],
+      "observedURLs": [],
+      "claimedModified": [],
+      "extraction": {
+        "method": "Mozilla Readability",
+        "version": "0.6.0",
+        "encoding": "UTF-8",
+        "encodingSource": "HTML encoding sniffing"
+      },
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Begin with an inventory of the files you cannot recreate. Include family photographs, research notes, account recovery instructions, and the documents that explain how your work is organized. Keep a copy of this inventory outside your primary computer.",
+          "lineageId": "p00001"
+        },
+        {
+          "kind": "p",
+          "text": "Store a second copy on a different physical device. A spare disk beside the laptop protects against a failed drive, but a fire or theft can still remove both copies. Choose a second location that remains accessible during a disruption.",
+          "lineageId": "p00002"
+        },
+        {
+          "kind": "p",
+          "text": "Test one restore every month. Write down the tools and passwords you needed, and check that the restored files actually open. Recovery instructions are useful only if someone can follow them without the original computer.",
+          "lineageId": "p00003"
+        },
+        {
+          "kind": "p",
+          "text": "Encrypt sensitive archives before copying them to remote storage. Keep the recovery key in a separate place and tell a trusted person how to locate it if you become unavailable. Losing the key makes a healthy backup unreadable.",
+          "lineageId": "p00004"
+        },
+        {
+          "kind": "p",
+          "text": "Keep each backup for ninety days before rotating it out. Name the archives consistently so that you can identify a capture without relying on the filesystem modification date. A copied file can receive a new date while containing old information.",
+          "lineageId": "p00005"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "c3",
+      "file": "captures/3.html",
+      "label": "March revision",
+      "format": "html",
+      "inputIndex": 2,
+      "sha256": "d55aabc18b1376d12c97d77167c1133eabf8e1685170e6719d376e24ff272cf5",
+      "bytes": 1574,
+      "title": "A practical backup routine",
+      "captureTime": {
+        "at": "2026-03-10T18:30:00.000Z",
+        "source": "fictional example capture log",
+        "raw": "2026-03-10T18:30:00Z"
+      },
+      "observedTimes": [],
+      "observedURLs": [],
+      "claimedModified": [],
+      "extraction": {
+        "method": "Mozilla Readability",
+        "version": "0.6.0",
+        "encoding": "UTF-8",
+        "encodingSource": "HTML encoding sniffing"
+      },
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Begin with an inventory of the files you cannot recreate. Include family photographs, research notes, account recovery instructions, and the documents that explain how your work is organized. Keep a copy of this inventory outside your primary computer.",
+          "lineageId": "p00001"
+        },
+        {
+          "kind": "p",
+          "text": "After each software upgrade, restore a small sample using a clean account. This catches missing dependencies and permission problems that a normal file listing cannot reveal. Record the result beside the capture log.",
+          "lineageId": "p00006"
+        },
+        {
+          "kind": "p",
+          "text": "Store a second copy on a different physical device. A spare disk beside the laptop protects against a failed drive, but a fire or theft can still remove both copies. Choose a second location that remains accessible during a disruption.",
+          "lineageId": "p00002"
+        },
+        {
+          "kind": "p",
+          "text": "Test one restore every month. Write down the tools and passwords you needed, and check that the restored files actually open. Recovery instructions are useful only if someone can follow them without the original computer.",
+          "lineageId": "p00003"
+        },
+        {
+          "kind": "p",
+          "text": "Keep each backup for ninety days before rotating it out. Name the archives consistently so that you can identify a capture without relying on the filesystem modification date. A copied file can receive a new date while containing old information.",
+          "lineageId": "p00005"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "id": "c4",
+      "file": "captures/4.html",
+      "label": "April reorganization",
+      "format": "html",
+      "inputIndex": 3,
+      "sha256": "48783784e6f3c0616707d8adf6ccb961c601bbc1f9feb6e8227c101dba3e31b7",
+      "bytes": 1574,
+      "title": "A practical backup routine",
+      "captureTime": {
+        "at": "2026-04-10T18:30:00.000Z",
+        "source": "fictional example capture log",
+        "raw": "2026-04-10T18:30:00Z"
+      },
+      "observedTimes": [],
+      "observedURLs": [],
+      "claimedModified": [],
+      "extraction": {
+        "method": "Mozilla Readability",
+        "version": "0.6.0",
+        "encoding": "UTF-8",
+        "encodingSource": "HTML encoding sniffing"
+      },
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Begin with an inventory of the files you cannot recreate. Include family photographs, research notes, account recovery instructions, and the documents that explain how your work is organized. Keep a copy of this inventory outside your primary computer.",
+          "lineageId": "p00001"
+        },
+        {
+          "kind": "p",
+          "text": "Store a second copy on a different physical device. A spare disk beside the laptop protects against a failed drive, but a fire or theft can still remove both copies. Choose a second location that remains accessible during a disruption.",
+          "lineageId": "p00002"
+        },
+        {
+          "kind": "p",
+          "text": "After each software upgrade, restore a small sample using a clean account. This catches missing dependencies and permission problems that a normal file listing cannot reveal. Record the result beside the capture log.",
+          "lineageId": "p00006"
+        },
+        {
+          "kind": "p",
+          "text": "Test one restore every month. Write down the tools and passwords you needed, and check that the restored files actually open. Recovery instructions are useful only if someone can follow them without the original computer.",
+          "lineageId": "p00003"
+        },
+        {
+          "kind": "p",
+          "text": "Keep each backup for ninety days before rotating it out. Name the archives consistently so that you can identify a capture without relying on the filesystem modification date. A copied file can receive a new date while containing old information.",
+          "lineageId": "p00005"
+        }
+      ],
+      "warnings": []
+    }
+  ],
+  "transitions": [
+    {
+      "from": "c1",
+      "to": "c2",
+      "counts": {
+        "added": 0,
+        "removed": 0,
+        "modified": 2,
+        "moved": 0,
+        "unchanged": 3
+      },
+      "changes": [
+        {
+          "type": "modified",
+          "lineageId": "p00003",
+          "oldIndex": 2,
+          "newIndex": 2,
+          "before": "Test one restore every six months. Write down the tools and passwords you needed, and check that the restored files actually open. Recovery instructions are useful only if someone can follow them without the original computer.",
+          "after": "Test one restore every month. Write down the tools and passwords you needed, and check that the restored files actually open. Recovery instructions are useful only if someone can follow them without the original computer.",
+          "confidence": 0.958,
+          "inline": [
+            {
+              "text": "Test one restore every ",
+              "added": false,
+              "removed": false
+            },
+            {
+              "text": "six months",
+              "added": false,
+              "removed": true
+            },
+            {
+              "text": "month",
+              "added": true,
+              "removed": false
+            },
+            {
+              "text": ". Write down the tools and passwords you needed, and check that the restored files actually open. Recovery instructions are useful only if someone can follow them without the original computer.",
+              "added": false,
+              "removed": false
+            }
+          ]
+        },
+        {
+          "type": "modified",
+          "lineageId": "p00005",
+          "oldIndex": 4,
+          "newIndex": 4,
+          "before": "Keep each backup for thirty days before rotating it out. Name the archives consistently so that you can identify a capture without relying on the filesystem modification date. A copied file can receive a new date while containing old information.",
+          "after": "Keep each backup for ninety days before rotating it out. Name the archives consistently so that you can identify a capture without relying on the filesystem modification date. A copied file can receive a new date while containing old information.",
+          "confidence": 0.975,
+          "inline": [
+            {
+              "text": "Keep each backup for ",
+              "added": false,
+              "removed": false
+            },
+            {
+              "text": "thirty",
+              "added": false,
+              "removed": true
+            },
+            {
+              "text": "ninety",
+              "added": true,
+              "removed": false
+            },
+            {
+              "text": " days before rotating it out. Name the archives consistently so that you can identify a capture without relying on the filesystem modification date. A copied file can receive a new date while containing old information.",
+              "added": false,
+              "removed": false
+            }
+          ]
+        }
+      ],
+      "warnings": [],
+      "titleChange": null,
+      "observedInterval": {
+        "chronological": true,
+        "after": "2026-01-10T18:30:00.000Z",
+        "by": "2026-02-10T18:30:00.000Z",
+        "meaning": "Difference observed between these captures; webpage edit time is unknown."
+      }
+    },
+    {
+      "from": "c2",
+      "to": "c3",
+      "counts": {
+        "added": 1,
+        "removed": 1,
+        "modified": 0,
+        "moved": 0,
+        "unchanged": 4
+      },
+      "changes": [
+        {
+          "type": "added",
+          "lineageId": "p00006",
+          "oldIndex": null,
+          "newIndex": 1,
+          "before": null,
+          "after": "After each software upgrade, restore a small sample using a clean account. This catches missing dependencies and permission problems that a normal file listing cannot reveal. Record the result beside the capture log.",
+          "confidence": null,
+          "inline": null
+        },
+        {
+          "type": "removed",
+          "lineageId": "p00004",
+          "oldIndex": 3,
+          "newIndex": null,
+          "before": "Encrypt sensitive archives before copying them to remote storage. Keep the recovery key in a separate place and tell a trusted person how to locate it if you become unavailable. Losing the key makes a healthy backup unreadable.",
+          "after": null,
+          "confidence": null,
+          "inline": null
+        }
+      ],
+      "warnings": [],
+      "titleChange": null,
+      "observedInterval": {
+        "chronological": true,
+        "after": "2026-02-10T18:30:00.000Z",
+        "by": "2026-03-10T18:30:00.000Z",
+        "meaning": "Difference observed between these captures; webpage edit time is unknown."
+      }
+    },
+    {
+      "from": "c3",
+      "to": "c4",
+      "counts": {
+        "added": 0,
+        "removed": 0,
+        "modified": 0,
+        "moved": 1,
+        "unchanged": 4
+      },
+      "changes": [
+        {
+          "type": "moved",
+          "lineageId": "p00006",
+          "oldIndex": 1,
+          "newIndex": 2,
+          "before": "After each software upgrade, restore a small sample using a clean account. This catches missing dependencies and permission problems that a normal file listing cannot reveal. Record the result beside the capture log.",
+          "after": "After each software upgrade, restore a small sample using a clean account. This catches missing dependencies and permission problems that a normal file listing cannot reveal. Record the result beside the capture log.",
+          "confidence": 1,
+          "inline": null
+        }
+      ],
+      "warnings": [],
+      "titleChange": null,
+      "observedInterval": {
+        "chronological": true,
+        "after": "2026-03-10T18:30:00.000Z",
+        "by": "2026-04-10T18:30:00.000Z",
+        "meaning": "Difference observed between these captures; webpage edit time is unknown."
+      }
+    }
+  ],
+  "lineages": [
+    {
+      "id": "p00001",
+      "observations": [
+        {
+          "captureId": "c1",
+          "index": 0,
+          "state": "first-observed"
+        },
+        {
+          "captureId": "c2",
+          "index": 0,
+          "state": "unchanged"
+        },
+        {
+          "captureId": "c3",
+          "index": 0,
+          "state": "unchanged"
+        },
+        {
+          "captureId": "c4",
+          "index": 0,
+          "state": "unchanged"
+        }
+      ],
+      "removals": []
+    },
+    {
+      "id": "p00002",
+      "observations": [
+        {
+          "captureId": "c1",
+          "index": 1,
+          "state": "first-observed"
+        },
+        {
+          "captureId": "c2",
+          "index": 1,
+          "state": "unchanged"
+        },
+        {
+          "captureId": "c3",
+          "index": 2,
+          "state": "unchanged"
+        },
+        {
+          "captureId": "c4",
+          "index": 1,
+          "state": "unchanged"
+        }
+      ],
+      "removals": []
+    },
+    {
+      "id": "p00003",
+      "observations": [
+        {
+          "captureId": "c1",
+          "index": 2,
+          "state": "first-observed"
+        },
+        {
+          "captureId": "c2",
+          "index": 2,
+          "state": "modified"
+        },
+        {
+          "captureId": "c3",
+          "index": 3,
+          "state": "unchanged"
+        },
+        {
+          "captureId": "c4",
+          "index": 3,
+          "state": "unchanged"
+        }
+      ],
+      "removals": []
+    },
+    {
+      "id": "p00004",
+      "observations": [
+        {
+          "captureId": "c1",
+          "index": 3,
+          "state": "first-observed"
+        },
+        {
+          "captureId": "c2",
+          "index": 3,
+          "state": "unchanged"
+        }
+      ],
+      "removals": [
+        {
+          "captureId": "c3",
+          "previousCaptureId": "c2",
+          "index": 3
+        }
+      ]
+    },
+    {
+      "id": "p00005",
+      "observations": [
+        {
+          "captureId": "c1",
+          "index": 4,
+          "state": "first-observed"
+        },
+        {
+          "captureId": "c2",
+          "index": 4,
+          "state": "modified"
+        },
+        {
+          "captureId": "c3",
+          "index": 4,
+          "state": "unchanged"
+        },
+        {
+          "captureId": "c4",
+          "index": 4,
+          "state": "unchanged"
+        }
+      ],
+      "removals": []
+    },
+    {
+      "id": "p00006",
+      "observations": [
+        {
+          "captureId": "c3",
+          "index": 1,
+          "state": "added"
+        },
+        {
+          "captureId": "c4",
+          "index": 2,
+          "state": "moved"
+        }
+      ],
+      "removals": []
+    }
+  ],
+  "semantics": "Capture timestamps record observations, never the webpage modification date. Paragraph identities are heuristic for edited text; ambiguous matches remain additions/removals."
+}

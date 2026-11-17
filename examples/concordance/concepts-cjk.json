@@ -1,0 +1,7 @@
+{
+  "concepts": [
+    {"id": "de", "label": "德（字词候选，需人工判断含义）", "aliases": ["德"], "boundary": "substring"},
+    {"id": "dao", "label": "道（字词候选，需人工判断含义）", "aliases": ["道"], "boundary": "substring"},
+    {"id": "power-en", "label": "Power / authority（独立检索词组）", "aliases": ["power", "authority"], "boundary": "word"}
+  ]
+}

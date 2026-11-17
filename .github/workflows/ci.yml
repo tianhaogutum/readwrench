@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      # Rules and per-file ignores live in [tool.ruff] in pyproject.toml.
+      - run: uvx ruff check .
+
+  test:
+    name: test (${{ matrix.os }}, Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install
+        # The test extra pulls in every tool's optional dependencies that support this
+        # Python version (see pyproject.toml); suites whose extra is missing skip themselves.
+        run: python -m pip install -e ".[test]"
+      - name: Run tests
+        run: python -m pytest -q
+
+  core:
+    # The base install has no runtime dependencies: the dispatcher, `check` and `clues`
+    # must work, and every other command must answer with an install hint, not a traceback.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install without extras
+        run: python -m pip install -e . pytest
+      - name: Run the dispatcher, check and clues suites
+        run: python -m pytest -q tests/test_readwrench_cli.py tests/check tests/cluejoin
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Build wheel and sdist
+        run: |
+          python -m pip install build twine
+          python -m build
+      - name: Check distribution metadata and PyPI README
+        run: python -m twine check --strict dist/*
+      - name: Smoke-test the built wheel
+        run: |
+          python -m venv /tmp/wheel-env
+          /tmp/wheel-env/bin/python -m pip install dist/*.whl
+          cd /tmp
+          /tmp/wheel-env/bin/readwrench --version
+          /tmp/wheel-env/bin/readwrench --help
+          /tmp/wheel-env/bin/readwrench check --list-checks
+          /tmp/wheel-env/bin/readwrench check "$GITHUB_WORKSPACE/examples" --fail-on never
+          /tmp/wheel-env/bin/readwrench clues --help > /dev/null
+          /tmp/wheel-env/bin/python -m readwrench check --help > /dev/null
+      - name: Check the wheel contents
+        run: |
+          python - <<'PY'
+          import glob, zipfile
+          names = set(zipfile.ZipFile(glob.glob("dist/*.whl")[0]).namelist())
+          required = ["readwrench/cli.py", "readwrench/check/cli.py"]
+          missing = [name for name in required if name not in names]
+          licenses = [name for name in names if "/licenses/" in name]
+          fonts = [name for name in names if name.endswith((".ttf", ".otf", ".epub", ".pdf"))]
+          print("license files:", sorted(licenses))
+          assert not missing, missing
+          assert not fonts, fonts  # fixtures stay in the sdist, never in the wheel
+          assert any(name.endswith("THIRD_PARTY.md") for name in licenses), licenses
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

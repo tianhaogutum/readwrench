@@ -1,0 +1,4 @@
+{"runs":[
+  {"id":"greeting","text":"السَّلَامُ عَلَيْكُمْ","language":"ar","script":"Arab","direction":"rtl"},
+  {"id":"joining","text":"لا سلام","language":"ar","script":"Arab","direction":"rtl","variations":{"wght":700}}
+]}

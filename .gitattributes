@@ -1,0 +1,15 @@
+# Fixtures and examples whose exact bytes are asserted by tests (CRLF text, captures,
+# expected outputs): never normalize line endings or whitespace.
+tests/cluejoin/fixtures/** -text
+tests/lineage/fixtures/** -text
+examples/lineage/** -text
+# Binary documents and fonts.
+*.epub binary
+*.pdf binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.warc binary
+*.gz binary
+*.mhtml -text

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<title>{{ name }} · Concept Concordance</title>
+<style>
+:root{color-scheme:light dark;font:16px/1.55 system-ui,sans-serif}body{margin:2rem;max-width:1600px}a{color:#2867af}h1{margin-bottom:.2rem}p{max-width:85ch}.meta{color:#666;font-size:.85rem;overflow-wrap:anywhere}.table-wrap{overflow-x:auto}table{border-collapse:collapse;min-width:900px;width:100%}th,td{border:1px solid #aaa;padding:.85rem;vertical-align:top;text-align:left}thead th{background:#dfe8ee;color:#182f40}tbody th{min-width:170px}td{min-width:240px}details{margin:.5rem 0}summary{cursor:pointer}blockquote{margin:.5rem 0;padding-left:.7rem;border-left:3px solid #819eaf}mark{background:#ffe58b;color:#212121}code{overflow-wrap:anywhere}.status{font-size:.85rem;font-weight:normal}section{margin:2rem 0}li{margin:.35rem 0}@media(prefers-color-scheme:dark){a{color:#93c4ff}.meta{color:#bbb}thead th{background:#263f51;color:#fff}}@media print{body{margin:0;font-size:10pt}details{break-inside:avoid}.table-wrap{overflow:visible}td{min-width:0}table{min-width:0}details>*{display:block}}
+</style>
+<h1>{{ name }}</h1>
+<p>Compare passages across editions. Search terms and aliases identify <strong>candidates</strong>.
+Only researcher-assigned senses classify usage; matching words alone do not establish a shared concept.</p>
+<p>{{ summary.books }} books · {{ summary.chapters }} spine resources · {{ summary.occurrences }} current occurrences ·
+{{ summary.status_counts.classified }} classified · {{ summary.status_counts.unreviewed }} unreviewed · {{ summary.status_counts.rejected }} rejected.</p>
+{% if summary.manual_chapter_ranges %}<p>{{ summary.manual_chapter_ranges }} researcher-defined chapter ranges. <a href="manual-chapters.json">View their source boundaries</a>.</p>{% endif %}
+<p class="meta">Originally seeded: {{ summary.seeded_candidates }} candidates. Deleting/adding/resizing highlights in Taguette can change the current total.
+Multi-sense occurrences appear in more than one row; the summary counts each occurrence once.</p>
+<nav><a href="occurrences.json">All occurrences + Readium locators</a> · <a href="matrix.csv">Matrix CSV</a> ·
+<a href="occurrences.csv">Passage CSV</a> · <a href="annotations.jsonld">Web Annotations</a> · <a href="sources.json">Source identities</a> · <a href="codebook.json">Codebook</a></nav>
+<section aria-label="Concept use matrix"><div class="table-wrap"><table>
+<thead><tr><th scope="col">Query / human classification</th>{% for book in books %}<th scope="col">{{ book.title }}<div class="meta">{{ book.authors|join('; ') }}<br>Edition SHA-256 {{ book.sha256[:12] }}</div></th>{% endfor %}</tr></thead>
+<tbody>{% for row in rows %}<tr><th scope="row">{{ row.concept }}<br><span class="status">{{ row.sense if row.status == 'classified' else row.status }}</span></th>
+{% for cell in row.cells %}<td><strong>{{ cell.count }}</strong> occurrence{{ '' if cell.count == 1 else 's' }}
+{% for hit in cell.occurrences %}<details><summary>{{ hit.chapter }} · “{{ hit.exact }}”</summary>
+<blockquote>{{ hit.before }}<mark>{{ hit.exact }}</mark>{{ hit.after }}</blockquote>
+<p><a href="{{ hit.reader_link }}">Read full source context</a></p>
+<div class="meta">{{ hit.id }}<br>{{ hit.href }}{% if hit.fragment %}#{{ hit.fragment }}{% endif %}<br>Canonical characters {{ hit.start }}–{{ hit.end }}</div>
+{% if hit.chapter_source == 'manual_range' %}<div class="meta">Chapter label supplied by the researcher.</div>{% endif %}
+</details>{% endfor %}</td>{% endfor %}</tr>{% endfor %}</tbody>
+</table></div></section>
+<section><h2>Queries</h2><ul>{% for concept in concepts %}<li><strong>{{ concept.label }}</strong>: {{ concept.aliases|join(', ') }} · {{ concept.boundary }} matching · {{ 'case-sensitive' if concept.case_sensitive else 'case-insensitive' }}</li>{% endfor %}</ul></section>
+<section><h2>Researcher's codebook</h2><dl>{% for tag in codebook %}{% if tag.path.startswith('sense/') %}<dt><strong>{{ tag.path[6:] }}</strong></dt><dd>{{ tag.description }}</dd>{% endif %}{% endfor %}</dl><p class="meta">Sense codes are shared across this project because the researcher chose those labels. Their presence does not automatically establish equivalence across authors or books.</p></section>
+<section><h2>Edition record</h2>{% for book in books %}<details><summary>{{ book.title }} — {{ book.sha256[:12] }}</summary><p>{{ book.authors|join('; ') }}<br>{{ book.edition|join('; ') }}</p><p class="meta">EPUB {{ book.epub_version }} · {{ book.identifiers|join('; ') }}<br>SHA-256: {{ book.sha256 }}<br>Original local file: {{ book.path }}</p></details>{% endfor %}</section>
+<p class="meta">Locators retain the EPUB resource, fragment and quote. TextPositionSelector offsets apply to the supplied canonical plain-text snapshots, not the original XHTML bytes or print pages. This static bundle uses no network requests.</p>
+</html>

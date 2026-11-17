@@ -1,0 +1,6 @@
+{
+  "type": "TextQuoteSelector",
+  "exact": "Careful readers check the original passage before citing it.",
+  "prefix": "The following paragraph is the passage the researcher remembers.\n\n",
+  "suffix": "\n\nThe next paragraph explains why the surrounding argument matters."
+}

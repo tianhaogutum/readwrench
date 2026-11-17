@@ -1,0 +1,7 @@
+{
+  "concepts": [
+    {"id": "power", "label": "Power / authority (query, not equivalence)", "aliases": ["power", "authority"], "boundary": "word"},
+    {"id": "liberty", "label": "Liberty / freedom (query, not equivalence)", "aliases": ["liberty", "freedom"], "boundary": "word"},
+    {"id": "justice", "label": "Justice", "aliases": ["justice"], "boundary": "word"}
+  ]
+}

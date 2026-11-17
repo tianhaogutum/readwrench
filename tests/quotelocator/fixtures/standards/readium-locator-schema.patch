@@ -1,0 +1,11 @@
+--- a/schema/locator.schema.json
++++ b/schema/locator.schema.json
+@@ -62,7 +62,7 @@
+           "type": "string"
+         }
+       }
+-    },
++    }
+   },
+   "required": [
+     "href",

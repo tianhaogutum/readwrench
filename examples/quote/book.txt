@@ -1,0 +1,22 @@
+Notebook recovery example
+
+The editor copied a sentence into the introduction.
+
+Careful readers check the original passage before citing it.
+
+This first occurrence is an introductory reminder.
+
+Chapter 2: Evidence
+
+The following paragraph is the passage the researcher remembers.
+
+Careful readers check the original passage before citing it.
+
+The next paragraph explains why the surrounding argument matters.
+
+Appendix: Typography
+
+A ﬁne “quotation” survives a hyphen-
+ated line and multiple   spaces.
+
+This is the end of the example book.

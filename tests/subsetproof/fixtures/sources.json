@@ -1,0 +1,44 @@
+{
+  "downloaded_utc": "2026-11-11",
+  "fonts": [
+    {
+      "file": "fonts/NotoSans.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/NotoSans%5Bwdth,wght%5D.ttf",
+      "version": "Version 2.015",
+      "sha256": "bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d",
+      "bytes": 2049096
+    },
+    {
+      "file": "fonts/NotoSansArabic.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansarabic/NotoSansArabic%5Bwdth,wght%5D.ttf",
+      "version": "Version 2.012",
+      "sha256": "63111b5b2e074dd48cc67692e0a2726d86ee94c1c37fe8598257b7b4e87e869e",
+      "bytes": 844676
+    },
+    {
+      "file": "fonts/NotoSansDevanagari.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansdevanagari/NotoSansDevanagari%5Bwdth,wght%5D.ttf",
+      "version": "Version 2.007",
+      "sha256": "14ec4af41f27482216d1c2229f417ff9b1425e1babb014e57d1d40d03229853e",
+      "bytes": 641944
+    },
+    {
+      "file": "fonts/SourceSerif4-Regular.otf",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/release/OTF/SourceSerif4-Regular.otf",
+      "version": "Version 4.005;hotconv 1.1.0;makeotfexe 2.6.0",
+      "sha256": "edf160d0d584deee8a3bb2c3371b2a7624ca63580fbe02c57c1f4c91e84d8787",
+      "bytes": 241392
+    },
+    {
+      "file": "fonts/SubsetProofCJKFixture.otf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+      "version": "Version 2.004;hotconv 1.0.118;makeotfexe 2.5.65603",
+      "derived": true,
+      "source_sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+      "source_bytes": 16437364,
+      "sha256": "501933a67b5cd075d4236e35a03b3e797aa77cd63021e27164f8bbde712f1195",
+      "bytes": 20304,
+      "transform": "fontTools 4.68.0 subset on examples/subset-proof/chinese.txt and vertical punctuation; all features; renamed by tests/subsetproof/fixtures/make_cid_fixture.py"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+[build-system]
+requires = ["hatchling>=1.27", "hatch-fancy-pypi-readme>=24.1"]
+build-backend = "hatchling.build"
+
+[project]
+name = "readwrench"
+version = "0.1.0"
+description = "Offline tools for people who read and annotate: find a lost quote, compare editions and PDF versions, move annotations, fix EPUB footnotes, prove font subsets and trace how a saved web page changed."
+# README.md with repository-relative links rewritten for PyPI (see tool.hatch.metadata.hooks below).
+dynamic = ["readme"]
+requires-python = ">=3.11"
+# AGPL-3.0-or-later: concordance, pdf-pages and reanchor were AGPL-3.0-or-later tools built on
+# AGPL libraries (EbookLib, PyMuPDF); the MIT-licensed tools keep their notices in licenses/.
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE", "THIRD_PARTY.md", "licenses/*"]
+authors = [{ name = "tianhaogutum" }]
+keywords = [
+    "reading", "annotation", "epub", "pdf", "quotation", "citation", "footnotes", "fonts",
+    "font-subsetting", "harfbuzz", "web-archive", "warc", "mhtml", "taguette", "concordance",
+    "pdf-annotations", "offline",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Text Processing :: Fonts",
+    "Topic :: Text Processing :: Indexing",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Topic :: Text Processing :: General",
+    "Topic :: System :: Archiving",
+    "Topic :: Utilities",
+]
+# `check`, `clues` and `lineage` use only the Python standard library. Every other command's
+# third-party dependencies live in an extra named after the command; without it the command
+# prints the install line instead of a traceback.
+dependencies = []
+
+[project.optional-dependencies]
+# readwrench quote: TXT/Markdown/HTML/PDF/EPUB readers and the reanchor text-anchoring library.
+quote = [
+    "reanchor>=0.3.0,<0.4",
+    "beautifulsoup4>=4.15.0,<5",
+    "pypdf>=7.0.1,<8",
+    "EbookLib>=0.21,<1",
+    "lxml>=6.1.3,<7",
+    "regex>=2026.11.9",
+    "rapidfuzz>=3.14.6,<4",
+]
+# readwrench concordance: a Taguette 1.5 workspace (the code checks Taguette's 1.5.2 database
+# revision). setuptools<81 keeps pkg_resources, which Taguette's OpenTelemetry pin imports.
+# Taguette's own dependency stack is tested on Python 3.11-3.14.
+concordance = [
+    "taguette>=1.5.2,<1.6",
+    "setuptools>=70,<81",
+    "EbookLib>=0.20,<0.22",
+    "beautifulsoup4>=4.12,<5",
+    "html5lib>=1.1,<2",
+    "lxml>=5,<7",
+    "jinja2>=3.1.6,<4",
+    "jsonschema>=4.23,<5",
+]
+# readwrench pdf-pages: plan and confirm run on Python 3.11; export drives Py-PDF-Compare, which
+# needs Python 3.12 and whose comparator internals are subclassed (hence the narrow range).
+pdf-pages = [
+    "py-pdf-compare>=2026.8.24,<2026.9; python_version >= '3.12'",
+    "PyMuPDF>=1.26.7,<1.27",
+    "Pillow>=12.1.0,<13",
+    "rapidfuzz>=3.10,<4",
+    "dhash>=1.4,<2",
+    "scipy>=1.16.3,<2",
+    "numpy>=1.25.2,<2.6",
+    "reportlab>=4.4,<6",
+]
+# readwrench reanchor: an extension of pdfanno 0.2 (uses its matcher internals). pdfanno needs
+# Python 3.12, so the extra installs nothing on 3.11 and the command says so.
+reanchor = [
+    "pdfanno>=0.2.2,<0.3; python_version >= '3.12'",
+    "PyMuPDF>=1.26,<1.28; python_version >= '3.12'",
+    "pydantic>=2.7,<3; python_version >= '3.12'",
+    "rapidfuzz>=3.14,<4; python_version >= '3.12'",
+    "regex>=2025.11,<2027; python_version >= '3.12'",
+]
+# readwrench footnotes: XHTML/OPF parsing and serialization.
+footnotes = ["lxml>=6.0,<7"]
+# readwrench subset-proof: fontTools subsetting (with WOFF/WOFF2 support) and HarfBuzz shaping.
+subset-proof = [
+    "fonttools[woff]>=4.68,<5",
+    "uharfbuzz>=0.57,<1",
+    "regex>=2026.11.9",
+]
+all = ["readwrench[quote,concordance,pdf-pages,reanchor,footnotes,subset-proof]"]
+# Everything the test suite imports: pytest, every extra, and test-only helpers (Hypothesis
+# properties, JSON-LD / JSON Schema checks of exported records, EbookLib and ReportLab to
+# write sample books and PDFs, pypdf to inspect written PDFs). Suites skip themselves when
+# an extra cannot be installed on the running Python.
+test = [
+    "readwrench[all]",
+    "pytest>=9.0.2",
+    "hypothesis>=6,<7",
+    "jsonschema>=4.26.0,<5",
+    "PyLD>=3.3.0,<4",
+    "rfc3986-validator>=0.1.1,<0.2",
+    "EbookLib>=0.21,<0.22",
+    "reportlab>=4.4,<5",
+    "pypdf>=7.0.1,<8",
+]
+
+[project.urls]
+Homepage = "https://github.com/tianhaogutum/readwrench"
+Repository = "https://github.com/tianhaogutum/readwrench"
+Issues = "https://github.com/tianhaogutum/readwrench/issues"
+Documentation = "https://github.com/tianhaogutum/readwrench/blob/main/docs/README.md"
+
+[project.scripts]
+readwrench = "readwrench.cli:main"
+
+# PyPI cannot resolve repository-relative links or images: rewrite them to GitHub URLs.
+[tool.hatch.metadata.hooks.fancy-pypi-readme]
+content-type = "text/markdown"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
+path = "README.md"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+# <img src>, <source srcset>: raw file URLs so the images render
+pattern = '(src|srcset)="(?!https?://)([^"]+)"'
+replacement = '\1="https://raw.githubusercontent.com/tianhaogutum/readwrench/main/\2"'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = 'href="(?!https?://|#|mailto:)([^"]+)"'
+replacement = 'href="https://github.com/tianhaogutum/readwrench/blob/main/\1"'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+# Markdown images, then Markdown links to files and directories
+pattern = '!\[([^\]]*)\]\((?!https?://)([^)\s]+)\)'
+replacement = '![\1](https://raw.githubusercontent.com/tianhaogutum/readwrench/main/\2)'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = '\]\((?!https?://|#|mailto:)([^)\s]+)\)'
+replacement = '](https://github.com/tianhaogutum/readwrench/blob/main/\1)'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+# In-page anchors: PyPI does not generate heading ids
+pattern = '\]\(#([^)\s]+)\)'
+replacement = '](https://github.com/tianhaogutum/readwrench#\1)'
+
+[tool.hatch.build.targets.wheel]
+# Every file under src/readwrench ships in the wheel, including the Jinja2 templates of
+# concordance and the review script of pdf-pages. Fonts, EPUBs and PDFs used by the tests
+# stay in tests/ and examples/ (sdist only).
+packages = ["src/readwrench"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests",
+    "/docs",
+    "/examples",
+    "/licenses",
+    "/assets",
+    "/README.md",
+    "/README.zh-CN.md",
+    "/LICENSE",
+    "/THIRD_PARTY.md",
+    "/pyproject.toml",
+]
+exclude = [
+    "__pycache__",
+    "*.py[cod]",
+    ".cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".DS_Store",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-ra"]
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+# Correctness-focused set; the merged tools keep their original compact style.
+select = ["E4", "E7", "E9", "F"]
+
+[tool.ruff.lint.per-file-ignores]
+# Test modules re-export fixtures and helpers across sibling modules and keep a compact style.
+"tests/**" = ["F401", "F811", "F841", "E402", "E701", "E702", "E731"]
+# Demo and helper scripts keep the original tools' compact one-line style.
+"examples/**" = ["F841", "E701", "E702", "E402"]

@@ -1,0 +1,34 @@
+{
+  "ag-energy-round-up-2017-02-24.pdf": {
+    "bytes": 50918,
+    "sha256": "4b9774416291f79421a85fac7ecbb8bf2bc625df9a7207d9dcd3ba845f3146fb"
+  },
+  "annotations-rotated-90.pdf": {
+    "bytes": 170174,
+    "sha256": "0c680ab11ec73b71cd879d5af80f698dfbfce1d1e2086365fbacb6225fd23468"
+  },
+  "annotations-unicode-issues.pdf": {
+    "bytes": 57927,
+    "sha256": "e774f5c98d25a725ca2163a52b9cd36113a9694bf4a07b452e3819bf3b268250"
+  },
+  "federal-register-2020-17221.pdf": {
+    "bytes": 713992,
+    "sha256": "ac419e4e084ea7a7a33a7be3f129dd07bc705b1a9e45ad751e33357f17d60f5c"
+  },
+  "scan-after.pdf": {
+    "bytes": 506518,
+    "sha256": "877ecae59c8d0660faff1a5e81d1e91273093e439eddd58c0519adb332d84a7d"
+  },
+  "scan-before.pdf": {
+    "bytes": 506518,
+    "sha256": "5b86b3cab773e130e7b631b21cbc0efa3c8807b46ecf0ba68bed5ec918fedf6a"
+  },
+  "warn-five.pdf": {
+    "bytes": 62489,
+    "sha256": "1aea2fe602387fc4f31ee8f3dc4f070b4666a60d2a1b440994b41b52a6fd487f"
+  },
+  "warn-reordered.pdf": {
+    "bytes": 66233,
+    "sha256": "bd437168800d500d206104603de7b3aa00504ecc4b83c350739b060fd886fa74"
+  }
+}
